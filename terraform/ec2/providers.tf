@@ -7,21 +7,21 @@ terraform {
   }
 }
 
-provider "aws" {
-  region     = var.region
-  access_key = var.aws_access_key
-  secret_key = var.aws_secret_access_key
-  token      = var.aws_session_token
+# provider "aws" {
+#   region     = var.region
+#   access_key = var.aws_access_key
+#   secret_key = var.aws_secret_access_key
+#   token      = var.aws_session_token
 
-  default_tags {
-    tags = {
-      Environment = var.environment
-      Project     = local.project
-      ManagedBy   = "Terraform"
-      Region      = var.region
-    }
-  }
-}
+#   default_tags {
+#     tags = {
+#       Environment = var.environment
+#       Project     = local.project
+#       ManagedBy   = "Terraform"
+#       Region      = var.region
+#     }
+#   }
+# }
 
 provider "aws" {
   aws_region            = var.region

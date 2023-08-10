@@ -59,7 +59,7 @@ module "ec2_instance" {
   key_name               = "destination-key"
   vpc_security_group_ids = [module.ec2_instance_sg.security_group_id]
   subnet_id              = element(data.terraform_remote_state.networking.outputs.public_subnets, 1)
-  private_ip = "10.0.20.1"
+  private_ip = "10.0.11.5"
 
   tags = {
     Environment = "dev"

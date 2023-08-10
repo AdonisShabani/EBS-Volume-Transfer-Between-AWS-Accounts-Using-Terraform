@@ -13,7 +13,7 @@ provider "aws" {
   secret_key = var.aws_secret_access_key
 
    assume_role {
-    role_arn = "arn:aws:iam::313422618945:role/training-terraform-role"
+    role_arn = local.aws_provider_role_arn
   }
 
   default_tags {

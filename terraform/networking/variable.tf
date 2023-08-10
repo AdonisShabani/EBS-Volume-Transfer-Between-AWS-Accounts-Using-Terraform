@@ -17,3 +17,8 @@ variable "environment" {
   type    = string
   default = "dev"
 }
+
+variable "account" {
+  type  = string
+  default = null
+}

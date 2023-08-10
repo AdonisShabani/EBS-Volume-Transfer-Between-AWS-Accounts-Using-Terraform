@@ -13,16 +13,16 @@ resource "aws_ami_launch_permission" "ami_premission" {
 # module "ec2_instance" {
 #   source  = "terraform-aws-modules/ec2-instance/aws"
 
-#   name = "single-instance"
+#   name = "ec2-destination-instance"
 
-#   ami = aws_ami_launch_permission.ami_premission.image_id
-#   private_ip = "10.0.20.1"
+#   ami = aws_ami_from_instance.ami.id
 #   associate_public_ip_address = true
 #   instance_type          = "t3.micro"
 #   key_name               = "destination-key"
 #   monitoring             = true
 #   vpc_security_group_ids = ["sg-12345678"]
 #   subnet_id              = "subnet-eddcdzz4"
+#   private_ip = "10.0.20.1"
 
 #   tags = {
 #     Terraform   = "true"

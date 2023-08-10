@@ -22,12 +22,6 @@ output "vpc_cidr_block" {
   description = "The CIDR block of the VPC"
   value       = module.vpc.vpc_cidr_block
 }
-
-output "lambda_sg_id" {
-  description = "Security Group ID"
-  value       = module.lambda_sg.security_group_id
-}
-
 output "default_security_group_id" {
   description = "ID of default security group"
   value       = module.vpc.default_security_group_id

@@ -10,22 +10,22 @@ resource "aws_ami_launch_permission" "ami_premission" {
   provider = aws.training
 }
 
-module "ec2_instance" {
-  source  = "terraform-aws-modules/ec2-instance/aws"
+# module "ec2_instance" {
+#   source  = "terraform-aws-modules/ec2-instance/aws"
 
-  name = "single-instance"
+#   name = "single-instance"
 
-  ami = aws_ami_launch_permission.ami_premission.image_id
-  private_ip = "10.0.20.1"
-  associate_public_ip_address = true
-  instance_type          = "t2.micro"
-  key_name               = "user1"
-  monitoring             = true
-  vpc_security_group_ids = ["sg-12345678"]
-  subnet_id              = "subnet-eddcdzz4"
+#   ami = aws_ami_launch_permission.ami_premission.image_id
+#   private_ip = "10.0.20.1"
+#   associate_public_ip_address = true
+#   instance_type          = "t3.micro"
+#   key_name               = "destination-key"
+#   monitoring             = true
+#   vpc_security_group_ids = ["sg-12345678"]
+#   subnet_id              = "subnet-eddcdzz4"
 
-  tags = {
-    Terraform   = "true"
-    Environment = "dev"
-  }
-}
+#   tags = {
+#     Terraform   = "true"
+#     Environment = "dev"
+#   }
+# }

@@ -1,11 +1,13 @@
 resource "aws_ami_from_instance" "ami" {
+  for_each = { for k, v in local.instance_configuration : k => v }
   name               = "source-ec2-instance-ami"
-  source_instance_id = data.aws_instance.ec2.instance_id
+  source_instance_id = each.value.id
   provider = aws.training
 }
 
 resource "aws_ami_launch_permission" "ami_premission" {
-  image_id   = aws_ami_from_instance.ami.id
+  for_each = aws_ami_from_instance.ami
+  image_id   = each.key
   account_id = "148482153770"
   provider = aws.training
 }
